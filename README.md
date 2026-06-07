@@ -53,3 +53,4 @@ python -m src.cli diff
 - `hashlib` module (SHA1 hashing)
 - `zlib` module (object compression)
 - No external dependencies
+
