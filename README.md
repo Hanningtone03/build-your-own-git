@@ -4,7 +4,7 @@ A Git version control system built from scratch in Python; supports init, add, c
 
 ## How it works
 
-Git stores every file as a content-addressed object identified by its SHA1 hash. This project implements that from scratch:
+Git stores every single file as a content-addressed object identified by its SHA1 hash. This project implements that from scratch:
 
 - Initializes a `.vgit` repository with an object store and HEAD reference
 - Hashes file contents and stores them as compressed blob objects
