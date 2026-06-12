@@ -18,9 +18,8 @@ jobs:
         run: python -m py_compile src/repository.py src/objects.py src/index.py src/commits.py src/diff.py src/cli.py
       - name: Test init and commit
         run: |
-          mkdir testrepo && cd testrepo
-          python -m ../src.cli init
+          python -m src.cli init
           echo "hello" > test.txt
-          python -m ../src.cli add test.txt
-          python -m ../src.cli commit "test commit"
-          python -m ../src.cli log
+          python -m src.cli add test.txt
+          python -m src.cli commit "test commit"
+          python -m src.cli log
