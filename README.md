@@ -1,17 +1,12 @@
+![CI](https://github.com/Hanningtone03/build-your-own-git/actions/workflows/ci.yml/badge.svg)
+
 # Build Your Own Git
 
-A Git version control system built from scratch in Python; supports init, add, commit, log and diff.
+A Git version control system in Python; init, add, commit, log, diff.
 
 ## How it works
 
-Git stores every single file as a content-addressed object identified by its SHA1 hash. This project implements that from scratch:
-
-- Initializes a `.vgit` repository with an object store and HEAD reference
-- Hashes file contents and stores them as compressed blob objects
-- Builds tree objects representing directory snapshots
-- Creates commit objects pointing to trees and parent commits
-- Traverses commit history for the log command
-- Compares current files against stored objects for diff
+Every file is SHA1-hashed and stored as a compressed blob. Directories become tree objects. Commits point to trees and parent commits. The log walks the commit chain. Diff compares working files against stored blobs.
 
 ## Project structure
 
@@ -35,24 +30,8 @@ python -m src.cli log
 python -m src.cli diff
 ```
 
-## Example
-
-```bash
-python -m src.cli init
-echo "hello" > test.txt
-python -m src.cli add test.txt
-python -m src.cli commit "initial commit"
-python -m src.cli log
-echo "hello updated" > test.txt
-python -m src.cli diff
-```
-
 ## Tech
 
 - Python 3
-- `hashlib` module (SHA1 hashing)
-- `zlib` module (object compression)
+- `hashlib`, `zlib` modules
 - No external dependencies
-
-# vgit
- 
